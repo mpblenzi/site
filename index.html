@@ -75,6 +75,32 @@ h2 span{color:var(--doux)}
 footer{border-top:1px solid var(--trait);padding:28px 0 40px}
 footer .page{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+.rassure{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;padding-top:26px;border-top:1px solid var(--trait);max-width:860px}
+.rassure span{display:flex;align-items:center;gap:10px;font-size:17px;color:var(--doux)}
+.rassure span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.phrases{display:grid;gap:14px;margin-top:44px}
+.phrases p{font-size:clamp(22px,2.6vw,30px);font-weight:400;letter-spacing:-.02em;color:var(--doux);padding-left:22px;border-left:2px solid var(--trait);transition:color .3s,border-color .3s}
+.phrases p:hover{color:var(--texte);border-color:var(--accent)}
+.moi{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;margin-top:44px}
+.mono-grand{width:140px;height:140px;border-radius:50%;border:1px solid var(--trait);display:grid;place-items:center;font-size:44px;font-weight:300;letter-spacing:-.04em;position:relative}
+.mono-grand::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid var(--accent);opacity:.5}
+.moi p{font-size:21px;color:var(--doux);max-width:640px}.moi p strong{color:var(--texte);font-weight:500}
+.chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait);border:1px solid var(--trait);margin-top:48px}
+.chiffres div{background:var(--fond);padding:30px 26px}
+.chiffres b{display:block;font-weight:400;font-size:clamp(40px,5vw,60px);letter-spacing:-.04em;line-height:1}
+.chiffres span{color:var(--doux);font-size:17px;display:block;margin-top:10px}
+.faq{margin-top:44px;border-top:1px solid var(--trait)}
+.faq details{border-bottom:1px solid var(--trait)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:26px 0;font-size:clamp(20px,2.2vw,24px);font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:300;font-size:30px;line-height:1;color:var(--accent);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--doux);font-size:19px;padding:0 0 28px;max-width:760px}
+.cta.plein{background:var(--accent);border-color:var(--accent);color:#050505}
+.cta.plein:hover{background:var(--texte);border-color:var(--texte)}
+.contact .second{display:block;margin-top:22px;color:var(--doux);font-size:18px}
+.contact .second a{border-bottom:1px solid var(--trait)}
+@media (max-width:820px){.moi{grid-template-columns:1fr;gap:24px}.chiffres{grid-template-columns:1fr}.mono-grand{width:110px;height:110px;font-size:34px}}
 .apparait{opacity:0;transform:translateY(16px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
 .apparait.vu{opacity:1;transform:none}
 .heros .apparait{animation:monte .9s cubic-bezier(.2,.7,.2,1) var(--d,0s) forwards}
@@ -104,13 +130,26 @@ footer .page{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="mono apparait" style="--d:.1s">Logiciels sur mesure — Dijon, Côte-d'Or</div>
     <h1 class="apparait" style="--d:.25s">Moins de ressaisie.<br><span>Plus de temps.</span></h1>
     <p class="chapo apparait" style="--d:.45s">Je remplace les tableurs, la paperasse et les vieux logiciels par des outils simples, faits pour votre entreprise. Livrés en quelques semaines, grâce à l'IA.</p>
-    <div class="apparait" style="--d:.6s"><a class="cta" href="#contact">Diagnostic offert <i>→</i></a></div>
+    <div class="apparait" style="--d:.6s"><a class="cta plein" href="#contact">Réserver un appel de 20 min offert <i>→</i></a></div>
+    <div class="rassure apparait" style="--d:.75s"><span>Réponse sous 24 h</span><span>Prix fixé avant de commencer</span><span>Le code vous appartient</span><span>Vos données restent chez vous</span></div>
   </div>
 </header>
 
 <section>
   <div class="page ligne">
-    <div class="mono">01 — Ce que je fais</div>
+    <div class="mono">01 — Vous vous reconnaissez ?</div>
+    <h2 class="apparait">Le quotidien de beaucoup de PME. <span>Et ça se règle.</span></h2>
+    <div class="phrases">
+      <p class="apparait">« On ressaisit les mêmes infos dans trois fichiers Excel. »</p>
+      <p class="apparait">« Notre logiciel a vingt ans, plus personne ne sait le modifier. »</p>
+      <p class="apparait">« Les devis et les rapports nous prennent des heures. »</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="page ligne">
+    <div class="mono">02 — Ce que je fais</div>
     <div>
       <h2 class="apparait">Des outils qui font gagner des heures. <span>Pas des gadgets.</span></h2>
       <div class="liste">
@@ -125,7 +164,23 @@ footer .page{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section>
   <div class="page ligne">
-    <div class="mono">02 — Méthode</div>
+    <div class="mono">03 — Qui je suis</div>
+    <h2 class="apparait">Vous parlez à celui qui code. <span>Pas à un commercial.</span></h2>
+    <div class="moi apparait">
+      <div class="mono-grand">AL</div>
+      <p><strong>Anthony Lenzi</strong>, développeur depuis 10 ans, dans différents secteurs et entreprises, aujourd'hui indépendant à Quetigny, à côté de Dijon. Je conçois, je code et je maintiens moi-même chaque outil. L'IA me permet de livrer en quelques semaines ce qui prenait des mois.</p>
+    </div>
+    <div class="chiffres apparait">
+      <div><b>10 ans</b><span>de développement, dans différents secteurs et entreprises</span></div>
+      <div><b>1 700+</b><span>évolutions livrées sur un logiciel métier en production</span></div>
+      <div><b>1</b><span>seul interlocuteur, du premier appel au suivi</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="page ligne">
+    <div class="mono">04 — Méthode</div>
     <div>
       <h2 class="apparait">Prix fixé avant de commencer. <span>Livraison par étapes.</span></h2>
       <div class="etapes apparait">
@@ -140,7 +195,7 @@ footer .page{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section>
   <div class="page ligne">
-    <div class="mono">03 — Formules</div>
+    <div class="mono">05 — Formules</div>
     <div>
       <h2 class="apparait">Du petit outil <span>au logiciel central.</span></h2>
       <div class="offres">
@@ -152,11 +207,26 @@ footer .page{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
+<section>
+  <div class="page ligne">
+    <div class="mono">06 — Questions fréquentes</div>
+    <h2 class="apparait">Les bonnes questions. <span>Les réponses franches.</span></h2>
+    <div class="faq apparait">
+      <details><summary>Combien ça coûte ?</summary><p>Ça dépend du besoin, mais le prix est toujours fixé avant de commencer, et découpé en étapes payées à la livraison. Le premier appel est offert, et vous repartez avec une idée claire du budget.</p></details>
+      <details><summary>Peut-on partir de mon fichier Excel ?</summary><p>Oui, c'est même le cas le plus fréquent. Vos données existantes sont reprises : rien n'est perdu.</p></details>
+      <details><summary>Et si vous n'êtes plus disponible ?</summary><p>Le code et les données vous appartiennent. L'outil est documenté et construit avec des technologies standard : n'importe quel développeur peut reprendre la suite.</p></details>
+      <details><summary>Mes données sont-elles en sécurité ?</summary><p>Vos données restent chez vous ou chez l'hébergeur de votre choix, avec des sauvegardes quotidiennes. L'IA n'est utilisée que là où elle sert, jamais sans votre accord.</p></details>
+      <details><summary>Je ne connais rien à l'informatique, c'est un problème ?</summary><p>Non. Vous me parlez de votre métier, je m'occupe de la technique. Les outils sont pensés pour être utilisés sans formation compliquée.</p></details>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="page">
-    <div class="mono apparait">04 — Contact</div>
+    <div class="mono apparait">07 — Contact</div>
     <h2 class="apparait" style="margin-top:24px">Parlons de votre quotidien.</h2>
-    <a class="cta apparait" href="mailto:contact@mpblenzi.fr?subject=Diagnostic%20offert">contact@mpblenzi.fr <i>→</i></a>
+    <a class="cta plein apparait" id="reserver" href="mailto:contact@mpblenzi.fr?subject=Appel%20de%2020%20min%20offert">Réserver un appel de 20 min <i>→</i></a>
+    <span class="second apparait">ou écrivez-moi : <a href="mailto:contact@mpblenzi.fr">contact@mpblenzi.fr</a> · réponse sous 24 h</span>
   </div>
 </section>
 
