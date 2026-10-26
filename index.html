@@ -9,81 +9,81 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-:root{--fond:#050505;--texte:#f2f2f0;--doux:#8a8a86;--trait:#1f1f1e;--accent:#c8ff2e}
-:root[data-theme="light"]{--fond:#f7f7f5;--texte:#0a0a0a;--doux:#6b6b68;--trait:#e2e2de;--accent:#4d6b00}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--fond:#f7f7f5;--texte:#0a0a0a;--doux:#6b6b68;--trait:#e2e2de;--accent:#4d6b00}}
+:root{--fond:#050505;--texte:#f2f2f0;--doux:#b4b4ae;--trait:#262624;--accent:#c8ff2e}
+:root[data-theme="light"]{--fond:#f7f7f5;--texte:#0a0a0a;--doux:#4f4f4a;--trait:#e2e2de;--accent:#4d6b00}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--fond:#f7f7f5;--texte:#0a0a0a;--doux:#4f4f4a;--trait:#e2e2de;--accent:#4d6b00}}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--fond);color:var(--texte);font:300 17px/1.6 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.mono{font-family:"Geist Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--doux)}
+body{background:var(--fond);color:var(--texte);font:400 19px/1.6 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.mono{font-family:"Geist Mono",monospace;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--doux)}
 .page{max-width:1100px;margin:0 auto;padding:0 24px}
 a{color:inherit;text-decoration:none}
 
 /* Grille de fond très légère + halo */
 .fond{position:fixed;inset:0;z-index:-1;pointer-events:none;
   background-image:linear-gradient(var(--trait) 1px,transparent 1px),linear-gradient(90deg,var(--trait) 1px,transparent 1px);
-  background-size:80px 80px;mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 80%);opacity:.6}
+  background-size:80px 80px;mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 80%);opacity:.35}
 .halo{position:fixed;top:-30vh;left:50%;width:70vw;height:70vh;transform:translateX(-50%);z-index:-1;pointer-events:none;
   background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 14%,transparent),transparent);filter:blur(20px)}
 
 nav{display:flex;justify-content:space-between;align-items:center;height:84px}
-.nom{font-weight:500;letter-spacing:-.01em}
+.nom{font-weight:500;font-size:20px;letter-spacing:-.01em}
 .nom b{display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:50%;margin-right:10px;box-shadow:0 0 12px var(--accent);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.35}}
-.lien{position:relative;font-size:15px}
+.lien{position:relative;font-size:18px}
 .lien::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s}
 .lien:hover::after{transform:scaleX(1);transform-origin:left}
 
 .heros{min-height:calc(100svh - 84px);display:flex;flex-direction:column;justify-content:center;padding:40px 0 80px}
-h1{font-weight:300;font-size:clamp(46px,8.4vw,112px);line-height:.98;letter-spacing:-.045em;margin:28px 0 34px}
+h1{font-weight:400;font-size:clamp(48px,8.4vw,112px);line-height:.98;letter-spacing:-.045em;margin:28px 0 34px}
 h1 span{color:var(--doux)}
-.chapo{max-width:520px;color:var(--doux);font-size:clamp(17px,1.7vw,19px)}
-.cta{display:inline-flex;align-items:center;gap:14px;margin-top:44px;padding:16px 26px;border:1px solid var(--texte);border-radius:999px;font-weight:400;transition:background .3s,color .3s,border-color .3s}
+.chapo{max-width:640px;color:var(--doux);font-size:clamp(20px,2vw,24px);line-height:1.5}
+.cta{display:inline-flex;align-items:center;gap:14px;margin-top:44px;padding:18px 30px;border:1px solid var(--texte);border-radius:999px;font-weight:500;font-size:19px;transition:background .3s,color .3s,border-color .3s}
 .cta:hover{background:var(--accent);border-color:var(--accent);color:#050505}
 .cta i{font-style:normal;transition:transform .3s}.cta:hover i{transform:translateX(5px)}
 
-section{padding:120px 0;border-top:1px solid var(--trait)}
-.ligne{display:grid;grid-template-columns:220px 1fr;gap:40px}
-h2{font-weight:300;font-size:clamp(30px,4vw,48px);letter-spacing:-.03em;line-height:1.08;max-width:760px}
+section{padding:110px 0;border-top:1px solid var(--trait)}
+.ligne{display:block}.ligne>.mono{margin-bottom:18px}
+h2{font-weight:400;font-size:clamp(36px,5vw,60px);letter-spacing:-.03em;line-height:1.05;max-width:900px}
 h2 span{color:var(--doux)}
 
-.liste{margin-top:56px;border-top:1px solid var(--trait)}
-.item{display:grid;grid-template-columns:60px 1fr 1.2fr;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--trait);transition:padding .4s}
-.item:hover{padding-left:12px}
-.item:hover .mono{color:var(--accent)}
-.item h3{font-weight:400;font-size:22px;letter-spacing:-.01em}
-.item p{color:var(--doux);font-size:16px}
+.liste{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+.item{border:1px solid var(--trait);border-radius:16px;padding:32px;transition:border-color .3s,transform .3s}
+.item:hover{border-color:var(--accent);transform:translateY(-3px)}
+
+.item h3{font-weight:500;font-size:clamp(24px,2.4vw,28px);letter-spacing:-.01em;margin-bottom:10px}
+.item p{color:var(--doux);font-size:19px}
 
 .etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--trait);border:1px solid var(--trait);margin-top:56px}
-.etape{background:var(--fond);padding:28px 24px 34px}
-.etape h3{font-weight:400;font-size:20px;margin:40px 0 8px}
-.etape p{color:var(--doux);font-size:15px}
+.etape{background:var(--fond);padding:30px 26px 36px}
+.etape h3{font-weight:500;font-size:26px;margin:22px 0 8px}
+.etape p{color:var(--doux);font-size:18px}
 
 .offres{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
-.offre{border:1px solid var(--trait);border-radius:14px;padding:30px;display:flex;flex-direction:column;gap:12px;transition:border-color .3s}
+.offre{border:1px solid var(--trait);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px;transition:border-color .3s}
 .offre:hover{border-color:var(--doux)}
-.offre h3{font-weight:400;font-size:22px}
-.offre p{color:var(--doux);font-size:15.5px;flex:1}
-.offre .prix{color:var(--texte);font-family:"Geist Mono",monospace;font-size:14px}
+.offre h3{font-weight:500;font-size:28px}
+.offre p{color:var(--doux);font-size:18px;flex:1}
+.offre .prix{color:var(--texte);font-weight:500;font-size:20px}
 .offre.cle{border-color:var(--accent)}
 .offre.cle .prix{color:var(--accent)}
 
 .contact{text-align:center;padding:160px 0}
 .contact h2{margin:0 auto;font-size:clamp(40px,6.5vw,84px)}
-.contact .cta{margin-top:48px;font-size:18px}
+.contact .cta{margin-top:48px;font-size:22px;padding:22px 36px}
 
 footer{border-top:1px solid var(--trait);padding:28px 0 40px}
 footer .page{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 .apparait{opacity:0;transform:translateY(16px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
 .apparait.vu{opacity:1;transform:none}
-.heros .apparait{transition-delay:var(--d,0s)}
-@media (prefers-reduced-motion:reduce){.apparait{opacity:1;transform:none;transition:none}.nom b{animation:none}}
+.heros .apparait{animation:monte .9s cubic-bezier(.2,.7,.2,1) var(--d,0s) forwards}
+@keyframes monte{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.apparait{opacity:1;transform:none;transition:none;animation:none!important}.nom b{animation:none}}
 
 @media (max-width:820px){
   .ligne{grid-template-columns:1fr;gap:18px}
-  .item{grid-template-columns:44px 1fr;gap:6px 14px}
-  .item p{grid-column:2}
+  .liste{grid-template-columns:1fr}
   .etapes{grid-template-columns:1fr 1fr}
   .offres{grid-template-columns:1fr}
   section{padding:88px 0}
@@ -114,10 +114,10 @@ footer .page{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div>
       <h2 class="apparait">Des outils qui font gagner des heures. <span>Pas des gadgets.</span></h2>
       <div class="liste">
-        <div class="item apparait"><span class="mono">A</span><h3>Moderniser un vieux logiciel</h3><p>Access, Excel à macros, programme Windows vieillissant : une application web, sans perdre vos données.</p></div>
-        <div class="item apparait"><span class="mono">B</span><h3>Documents automatiques</h3><p>Devis, rapports, bons : générés en un clic, signés et envoyés.</p></div>
-        <div class="item apparait"><span class="mono">C</span><h3>Logiciels connectés</h3><p>Comptabilité, messagerie, signature : vos outils se parlent enfin.</p></div>
-        <div class="item apparait"><span class="mono">D</span><h3>IA utile</h3><p>Lire un document, préremplir un formulaire, résumer un dossier.</p></div>
+        <div class="item apparait"><h3>Moderniser un vieux logiciel</h3><p>Access, Excel à macros, programme Windows vieillissant : une application web, sans perdre vos données.</p></div>
+        <div class="item apparait"><h3>Documents automatiques</h3><p>Devis, rapports, bons : générés en un clic, signés et envoyés.</p></div>
+        <div class="item apparait"><h3>Logiciels connectés</h3><p>Comptabilité, messagerie, signature : vos outils se parlent enfin.</p></div>
+        <div class="item apparait"><h3>IA utile</h3><p>Lire un document, préremplir un formulaire, résumer un dossier.</p></div>
       </div>
     </div>
   </div>
